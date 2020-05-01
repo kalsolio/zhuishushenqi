@@ -9,7 +9,9 @@
     "start": "pm2 start pm2.json",
     "start:prod": "pm2 startOrRestart ecosystem.config.js --env production",
     "deploy": "pm2 deploy ecosystem.config.js production deploy",
-    "setup": "pm2 deploy ecosystem.config.js production setup"
+    "setup": "pm2 deploy ecosystem.config.js production setup",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -37,7 +39,8 @@
     "mz": "^2.6.0",
     "nunjucks": "^3.0.0",
     "pm2": "^2.4.6",
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.4.17",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -52,5 +55,6 @@
   "engines": {
     "node": ">7.6",
     "npm": ">4.0"
-  }
+  },
+  "snyk": true
 }
